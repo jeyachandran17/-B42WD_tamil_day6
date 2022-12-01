@@ -1,0 +1,131 @@
+//                  full stack development day 6 task
+
+
+// 1. class Movie
+
+class Movie{
+    constructor(title,studio,rating){
+        this.title = title;
+        this.studio = studio;
+        if(rating==undefined)
+        {
+            this.rating = "PG";
+        }
+        else
+        {
+            this.rating = rating;
+        }
+    }
+    getPG(){
+        var result = [];
+        for(var i = 0; i < arr.length; i++){
+             if(arr[i].rating=="PG"){
+                 result.push(arr[i]);
+             }
+        }
+        return result;
+    } 
+
+}
+// 1. a ) write a construtor movie name,studio, rating
+var movie_1 = new Movie("iron man","marvel","PG13")
+console.log(movie_1)
+
+// 1. b ) rating to "PG" as default when no rating is provided
+var movie_2 = new Movie("spider man","marvel")
+console.log(movie_2);
+
+// 1. c ) create getPG and get movies in the input array with a rating of "PG"
+var arr = [movie_1,movie_2]
+var movie = new Movie();
+console.log(movie.getPG(arr));
+
+// 1. d ) title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+var movie_3 = new Movie("Casino Royale","Eon Productions","PG13")
+console.log(movie_3);
+
+// ____________________________________________________________________________________________________________________________________
+
+// 2. convert UML diagram to typescript 
+
+class Circle{
+    constructor(radius,color){
+        this.radius = radius;
+        this.color = color;
+    }
+    get redius(){
+        return this.radius;
+    }
+    set redius(radius){
+        this.radius = radius ;
+    }
+    get radiuscolor(){
+        return this.color;
+    }
+    set radiuscolor(color){
+        this.color = color ;
+    }
+    toString(){
+        return `Circle [ radius : ${ this.radius }, color : ${ this.color }]`;
+    }
+    get area(){
+        return Math.PI * this.radius * this.radius;
+    }
+    get circumference(){
+        return 2 * Math.PI * this.radius;
+    }
+
+} 
+var test = new Circle(1.0,"red");
+console.log(test.color);
+console.log(test.radius);
+console.log(test.area);
+console.log(test.circumference);
+console.log(test.toString())
+test.radius = 1.0;
+test.color = "red";
+console.log(test.radius);
+console.log(test.color);
+
+// ____________________________________________________________________________________________________________________________________
+
+// 3. a " person " class to hold all the details
+
+class Person{
+    constructor(name, age, salary, gender){
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.gender = gender;
+    }
+}
+var task = new Person("adam",25,10000,"male");
+console.log("Name : "+ task.name +", Age : "+task.age +", Salary "+ task.salary +", Gender : "+ task.gender);
+
+// ____________________________________________________________________________________________________________________________________
+
+// 4. class to Calculate the uber rice
+
+class Uber
+{
+    constructor(base_fare, cost_per_minute, time_of_ride, cost_per_mile, ride_distance, sure_bosst_multipler, booking_fee)
+    {
+        this.base_fare = base_fare;
+        this.cost_per_minute = cost_per_minute;
+        this.time_of_ride = time_of_ride;
+        this.cost_per_mile = cost_per_mile;
+        this.ride_distance = ride_distance;
+        this.sure_bosst_multipler = sure_bosst_multipler;
+        this.booking_fee = booking_fee;
+    }
+    get calculate_price()
+    {
+        return ((this.base_fare +( this.cost_per_minute * this.time_of_ride) + (this.cost_per_mile * this.ride_distance ))* this.sure_bosst_multipler)+ this.booking_fee;
+    }
+}
+var test = new Uber(100,3,10,5,2,2,50)
+console.log(test.calculate_price);
+
+// ____________________________________________________________________________________________________________________________________
+
